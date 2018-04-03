@@ -9,13 +9,44 @@
     <title>bank account</title>
   </head>
   <body>
-   <textarea id="name"></textarea>
-   <textarea id="initial"></textarea>
-   <textarea id="deposit"></textarea>
-   <textarea id="withdrawal"></textarea>
+    <div class="container">
+      <h1>Welcome to the Epicodus Credit Union!</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Register a new account</h2>
+          <form id="new-account">
+            <div class="form-group">
+              <label for="name">Name: </label>
+              <input  id="name" type="text" class="form-control short">
+            </div>
+            <div class="form-group">
+              <label for="initial">Initial Deposit: </label>
+              <input  id="initial" type="text" class="form-control short">
+            </div>
+          </form>
+        </div>
 
-   <br>
-   <h1 id ="balance"></h1>
+        <div class="col-md-6">
+          <h2>Deposit or withdraw funds: </h2>
+          <form id="funds">
+            <div class="form-group">
+              <label for="deposit">Deposit Amount: </label>
+              <input  id="deposit" type="text" class="form-control short">
+            </div>
+            <div class="form-group">
+              <label for="withdrawal">Withdrawal Amount</label>
+              <input  id="withdrawal" type="text" class="form-control short">
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="current-balance">
+        <h2 id="current">Current Balance:</h2>
+        <div class="box">
+          <p id="current-box"><b>$ <span id="balance"></span></b></p>
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>

@@ -18,6 +18,8 @@ Bankaccount.prototype.deposit= function(damount){
 function resetFields() {
     $("#name").val("");
     $("#initial").val("");
+    $("#deposit").val("");
+    $("#withdrawal").val("");
 }
 
 
@@ -33,16 +35,19 @@ $(document).ready(function(){
         var test = {key: "hello"};
 
         $("#balance").text(newAccount.current);
+        $(".current-balance").show();
         resetFields();
 
       }
       if($("#deposit").val()){
         newAccount.current = newAccount.deposit(parseInt($("#deposit").val()));
         $("#balance").text(newAccount.current);
+        resetFields();
       }
       if($("#withdrawal").val()){
         newAccount.current = newAccount.withdrawal(parseInt($("#withdrawal").val()));
         $("#balance").text(newAccount.current);
+        resetFields();
       }
       }
   });
