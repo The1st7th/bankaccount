@@ -1,3 +1,5 @@
+// Business logic.
+
 function Bankaccount(name, initial){
   this.name = name;
   this.initial= initial;
@@ -22,15 +24,24 @@ function resetFields() {
     $("#withdrawal").val("");
 }
 
+var validate = function(string) {
+  return /^\d+$/.test(string);
+};
 
 
+// UI logic.
 var newAccount;
 $(document).ready(function(){
   $("body").keypress(function(e){
     if(e.keyCode == 13){
       if ($("#name").val()){
         var name = $("#name").val();
-        var initial = parseInt($("#initial").val());
+        var initial = $("#initial").val();
+        if (!validate(initial)){
+          alert("Please enter an integer number");
+          return;
+        }      
+        initial = parseInt(initial);
         newAccount = new Bankaccount(name, initial);
         var test = {key: "hello"};
 
